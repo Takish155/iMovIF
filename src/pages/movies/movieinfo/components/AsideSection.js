@@ -114,7 +114,7 @@ export default function AsideSection({ movieData }) {
         ""
       ) : (
         <div className="my-4 border-white w-9/12 border-b">
-          <h3 className="font-bold mb-1">Movie Budget</h3>
+          <h3 className="font-bold mb-1">Movie Revenue</h3>
           <p>{moneyFormat.format(movieData.revenue)}</p>
         </div>
       )}
