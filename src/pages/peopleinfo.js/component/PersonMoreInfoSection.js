@@ -57,10 +57,18 @@ export default function PersonMoreInfoSection() {
                     sx={paperStyles}
                     onClick={() => navigate(`/movies/info/${element.id}`)}
                   >
-                    <img
-                      src={`https://image.tmdb.org/t/p/w185${element.poster_path}`}
-                      alt={`Poster pic of ${element.name}, ${getPeopleInfoData.name} casted for.`}
-                    />
+                    {!element.poster_path ? (
+                      <img
+                        className="rounded-2xl mx-auto mb-5"
+                        src={`https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`}
+                        alt="img not available"
+                      />
+                    ) : (
+                      <img
+                        src={`https://image.tmdb.org/t/p/w185${element.poster_path}`}
+                        alt={`Poster pic of ${element.name}, ${getPeopleInfoData.name} casted for.`}
+                      />
+                    )}
                     <p className="font-bold text-xl">{element.character}</p>
                   </Paper>
                 );

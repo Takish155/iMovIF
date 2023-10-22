@@ -5,15 +5,16 @@ import SortMenu from "./SortMenu";
 import { useMovieContext } from "../MovieContext";
 
 export default function TemporaryDrawerSection() {
-  const { movieState, movieGenreListState } = useMovieContext();
+  const { movieState, movieGenreListState, movieGenreDataState } =
+    useMovieContext();
   const { movieGenre } = movieGenreListState;
+  const { genre } = movieGenreDataState;
   const {
     matches600px,
     openDrawer,
     setOpenDrawer,
     setGenreChanged,
     setCurrentGenre,
-    currentGenre,
     currentScroll,
     setTriggerScroll,
   } = movieState;
@@ -53,8 +54,8 @@ export default function TemporaryDrawerSection() {
                     );
                   }}
                   sx={{
-                    fontSize: currentGenre === element.name ? "1.5rem" : "1rem",
-                    fontWeight: currentGenre === element.name ? "800" : "450",
+                    fontSize: genre === element.id ? "1.5rem" : "1rem",
+                    fontWeight: genre === element.id ? "800" : "450",
                     padding: "1rem",
                     transition:
                       "font-weight 0.1s ease-in-out, font-size 0.2s ease-in-out",

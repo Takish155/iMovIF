@@ -42,14 +42,17 @@ export default function useGetMovieByGenres() {
 
   function getGenreId(paramId) {
     if (paramId === "" || paramId === undefined) {
+      setGenre(28);
       return "28";
     }
 
     if (paramId === "science-fiction") {
+      setGenre(878);
       return "878";
     }
 
     if (paramId === "tv-movie") {
+      setGenre(10770);
       return "10770";
     }
 
@@ -57,13 +60,13 @@ export default function useGetMovieByGenres() {
       throw new Error(`Invalid genre! ${paramId}`);
     }
 
+    setGenre(genreList[id]);
     return genreList[id];
   }
 
   async function fetchGenreData({ pageParam = 1 }) {
-    let genreId;
     try {
-      genreId = getGenreId(id);
+      getGenreId(id);
     } catch (err) {
       console.error(err);
       navigate("/error");

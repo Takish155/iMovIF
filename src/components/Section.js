@@ -26,16 +26,29 @@ export default function Section({ dataName }) {
                 navigate(`/movies/info/${data.id}`);
               }}
             >
-              <img
-                src={`https://image.tmdb.org/t/p/w154${data.poster_path}`}
-                alt={`movie thumbnail of ${data.title}`}
-                style={{
-                  width: "70%",
-                  height: "13rem",
-                  minHeight: "13rem",
-                  marginTop: "0.5rem",
-                }}
-              />
+              {!data.poster_path ? (
+                <img
+                  src={`https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`}
+                  alt="img not available"
+                  style={{
+                    width: "70%",
+                    height: "13rem",
+                    minHeight: "13rem",
+                    marginTop: "0.5rem",
+                  }}
+                />
+              ) : (
+                <img
+                  src={`https://image.tmdb.org/t/p/w154${data.poster_path}`}
+                  alt={`movie thumbnail of ${data.title}`}
+                  style={{
+                    width: "70%",
+                    height: "13rem",
+                    minHeight: "13rem",
+                    marginTop: "0.5rem",
+                  }}
+                />
+              )}
               {data.vote_average !== 0 && data.vote_average !== null ? (
                 <Paper
                   elevation={5}

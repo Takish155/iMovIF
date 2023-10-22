@@ -1,7 +1,6 @@
-import { Grid, Skeleton, useMediaQuery } from "@mui/material";
+import { Grid, Skeleton } from "@mui/material";
 
 export default function MovieInfoSkeleton() {
-  const matches = useMediaQuery("(max-width:900px)");
   return (
     <>
       <Grid container spacing={0} sx={{ width: "95%", margin: "0 auto" }}>

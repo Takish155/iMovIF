@@ -18,11 +18,19 @@ export default function PeopleBox({ dataName }) {
                   sx={peoplePaper}
                   onClick={() => navigate(`info/${data.id}`)}
                 >
-                  <img
-                    src={`https://image.tmdb.org/t/p/w300${data.profile_path}`}
-                    style={peopleImage}
-                    alt={`pic of ${data.name}, a famous person`}
-                  />
+                  {!data.profile_path ? (
+                    <img
+                      src={`https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`}
+                      alt="img not available"
+                      style={peopleImage}
+                    />
+                  ) : (
+                    <img
+                      src={`https://image.tmdb.org/t/p/w300${data.profile_path}`}
+                      style={peopleImage}
+                      alt={`pic of ${data.name}, a famous person`}
+                    />
+                  )}
                   <h3 className="font-bold text-xl text-center uppercase">
                     {data.name}
                   </h3>

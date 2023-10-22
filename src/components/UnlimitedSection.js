@@ -32,13 +32,23 @@ export default function UnlimitedSection({ dataName }) {
                       navigate(`/movies/info/${data.id}`);
                     }}
                   >
-                    <img
-                      width={"150px"}
-                      height={"225px"}
-                      src={`https://image.tmdb.org/t/p/w154${data.poster_path}`}
-                      alt={`movie thumbnail of ${data.title}`}
-                      className="mt-2"
-                    />
+                    {!data.poster_path ? (
+                      <img
+                        src={`https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`}
+                        alt="img not available"
+                        width={"150px"}
+                        height={"225px"}
+                        className="mt-2 mb-10"
+                      />
+                    ) : (
+                      <img
+                        width={"150px"}
+                        height={"225px"}
+                        src={`https://image.tmdb.org/t/p/w154${data.poster_path}`}
+                        alt={`movie thumbnail of ${data.title}`}
+                        className="mt-2"
+                      />
+                    )}
                     {data.vote_average !== 0 && data.vote_average !== null ? (
                       <Paper
                         elevation={5}

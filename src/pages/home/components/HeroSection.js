@@ -1,8 +1,9 @@
 import { Grid, Paper } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 import {
   heroLeftSection,
   heroRightSection,
-  paperStyles,
+  heroPaperStyles,
 } from "../../../styles/styles";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -27,7 +28,7 @@ export default function HeroSection(props) {
       {windowWidth >= 900 ? (
         <Paper
           elevation={20}
-          sx={paperStyles}
+          sx={heroPaperStyles}
           onClick={() =>
             navigate(`movies/info/${props.heroDatas[props.index].id}`)
           }
@@ -35,7 +36,9 @@ export default function HeroSection(props) {
           <Grid container sx={{ justifyContent: "center" }}>
             <Grid item lg={6} md={6} sx={heroLeftSection}>
               <h3 className="text-4xl font-bold mb-2 self-start">
-                {props.heroDatas[props.index].original_title}
+                {props.heroDatas[props.index].original_title} |{" "}
+                {!props.heroDatas[props.index].vote_average ? "" : <StarIcon />}{" "}
+                {props.heroDatas[props.index].vote_average.toFixed(1)}
               </h3>
               <p className="text-xl font-bold mb-7 self-start">
                 {props.heroDatas[props.index].release_date}
@@ -53,6 +56,7 @@ export default function HeroSection(props) {
                 src={`https://image.tmdb.org/t/p/w342${
                   props.heroDatas[props.index].poster_path
                 }`}
+                className="relative"
               />
             </Grid>
           </Grid>

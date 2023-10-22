@@ -44,8 +44,8 @@ export default function MoviesSection() {
       </div>
       <Container ref={movieSectionRef} sx={verticalStyling}>
         <UnlimitedSection dataName={movieGenreData.pages} />
-        <p ref={intersecting}>
-          {!movieGenreHasNextPage ? "No more to load" : "Loading more pages..."}
+        <p ref={intersecting} className="mt-10">
+          {!movieGenreHasNextPage ? "" : "Loading more pages..."}
         </p>
       </Container>
     </Grid>
