@@ -90,7 +90,7 @@ export default function Header() {
           },
         }}
       >
-        <SearchNav />
+        <SearchNav onClick={toggleDrawer} />
         <Button
           type="text"
           onClick={toggleDrawer}

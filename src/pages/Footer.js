@@ -41,7 +41,7 @@ export default function Footer() {
         </Typography>
       </div>
       <a
-        href="https://developer.themoviedb.org/reference/intro/getting-started"
+        href="https://www.themoviedb.org/?language=en-US"
         target="_blank"
         className="inline-block"
         rel="noreferrer"

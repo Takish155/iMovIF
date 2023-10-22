@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./pages/Header";
 import Home from "./pages/home/Home";
 import { HomeProvider } from "./pages/home/HomeContext";
@@ -17,6 +17,12 @@ import ErrorPage from "./pages/ErrorPage";
 import Footer from "./pages/Footer";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <Header />
