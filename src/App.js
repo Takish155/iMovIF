@@ -26,6 +26,7 @@ function App() {
           element={
             <HomeProvider>
               <Home />
+              <Footer />
             </HomeProvider>
           }
         />
@@ -34,6 +35,7 @@ function App() {
           element={
             <MovieInfoProvider>
               <MovieInfo />
+              <Footer />
             </MovieInfoProvider>
           }
         />
@@ -58,6 +60,7 @@ function App() {
           element={
             <MovieProvider>
               <Movies />
+              <Footer />
             </MovieProvider>
           }
         />
@@ -74,12 +77,12 @@ function App() {
           element={
             <PeopleInfoProvider>
               <PeopleInfo />
+              <Footer />
             </PeopleInfoProvider>
           }
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <Footer />
     </>
   );
 }
