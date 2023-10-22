@@ -65,9 +65,8 @@ export default function useGetMovieByGenres() {
   }
 
   async function fetchGenreData({ pageParam = 1 }) {
-    let genreId;
     try {
-      genreId = getGenreId(id);
+      getGenreId(id);
     } catch (err) {
       console.error(err);
       navigate("/error");

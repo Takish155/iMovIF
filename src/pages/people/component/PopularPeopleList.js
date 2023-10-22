@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import PeopleBox from "../../../components/PeopleBox";
 import {
   useLoadMorePeopleContext,
