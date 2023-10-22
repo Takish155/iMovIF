@@ -1,8 +1,42 @@
+export const heroPaperStyles = {
+  backgroundColor: "#121212",
+  color: "#fff",
+  minWidth: "12rem",
+  height: "100%",
+  width: "100%",
+  minHeight: "22rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  cursor: "pointer",
+  gap: "1rem",
+  transition: "background-color 0.1s ease",
+  "&:hover": {
+    backgroundColor: "#424242", //
+  },
+};
+
+export const heroPaperStylesSkeleton = {
+  backgroundColor: "#121212",
+  color: "#fff",
+  minWidth: "12rem",
+  height: "100%",
+  width: "100%",
+  minHeight: "22rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  cursor: "pointer",
+  gap: "1rem",
+  transition: "background-color 0.1s ease",
+};
+
 export const paperStyles = {
   backgroundColor: "#121212",
   color: "#fff",
   minWidth: "12rem",
   height: "100%",
+  maxWidth: "10rem",
   width: "100%",
   minHeight: "22rem",
   display: "flex",
