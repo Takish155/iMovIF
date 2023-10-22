@@ -14,6 +14,7 @@ import { PeopleProvider } from "./pages/people/PeopleContext";
 import PeopleInfo from "./pages/peopleinfo.js/PeopleInfo";
 import { PeopleInfoProvider } from "./pages/peopleinfo.js/PeopleContext";
 import ErrorPage from "./pages/ErrorPage";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }
