@@ -1,12 +1,12 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 
+const API_KEYS = process.env.REACT_APP_API_KEY;
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYmI1MzFjZmI3ODBiNmQ3Mzc5ZmI3YzNiMDE3ZDZmMSIsInN1YiI6IjY0ZWFjMzE5YzVjMWVmMDBlNGFhNzMwNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6HG6BS5QMv84v7O9xEvP0F4oRHeqRIYqWRr-apPXRQo",
+    Authorization: `Bearer ${API_KEYS}`,
   },
 };
 
